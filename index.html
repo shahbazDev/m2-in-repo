@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>m2repo</title>
+</head>
+<body>
+    var score= 0
+var readlineSync=require('readline-sync')
+var userName = readlineSync.question("what is your name ? ")
+console.log("welcome "+userName+", I am omicron,lets play do u know bigbangtheory ? ")
+console.log("Please dont use google,be honest "+ userName)
+console.log("-----")
+function play (question,answer){
+  var userAnswer = readlineSync.question(question)
+  if(userAnswer.toUpperCase()===answer.toUpperCase()){
+    console.log("u are right")
+    score= score+1;
+  }else{
+    console.log("u are wrong")
+  }
+  if(score===5){
+  console.log("wow ! U just went to lvl 2")
+}
+if(score===10){
+  console.log("wow ! U just went to lvl 3")
+}
+}
+var questions = [
+            questionOne = {question: "What is the main lead's name? ",  answer: "sheldon"},
+            questionTwo = {question: "what is main female lead's name? ", answer: "penny"},
+            questionThree = {question: "which character went to space once? ", answer: "howard"},
+            questionFour = {question: "which character is from india? ", answer: "rajesh"},
+            questionFive = {question: "which character is main lead's gf? ", answer: "amy"},
+            questionSix = {question: "which character owns comic book store? ", answer: "stuart"},
+            questionSeven = {question: "which character has lactic intolerance? ", answer: "leonard"},
+            questionEight = {question: "which character has phd in microbiology? ", answer: "bernadette"},
+            questionNine = {question: "which character is a geologist? ", answer: "bert"},
+            questionTen = {question: "what is rajesh's dog name ? ", answer: "cinnamon"},
+          ]
+for (i=0; i<questions.length; i++){
+var currentQuestion=questions[i]
+play (currentQuestion.question,currentQuestion.answer)
+}
+console.log("Yay your score is: "+score + " out of 10")
+console.log("-----")
+
+
+//data of high score
+var highScore = [{name:"shabash", 
+                score:10},
+              {name:"kripke",
+                score:9}]
+                  console.log("HighScores are:")
+for (i=0; i<highScore.length; i++){
+  currentHighScore= highScore[i]
+      console.log(currentHighScore.name)
+  console.log(currentHighScore.score)
+  console.log("-----")
+}
+console.log("send me a screenshot if u beat high score, my assistant shab will update in database")
+console.log("Thank you for ur time "+userName+" BYE !")
+    
+</body>
+</html>
